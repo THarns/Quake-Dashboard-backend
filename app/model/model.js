@@ -10,7 +10,7 @@ View.getJSONdata = (viewId, result) => {
     //create query using viewId parameter
     let query = sql.query( `SELECT Data from json_data WHERE Time = ?`, viewId, (err, res) => {
         if(err) {
-            console.log("error: ", err);
+            console.log("error: " + err);
         } else {
             let preparsed = JSON.parse(JSON.stringify(res[0].Data));
             let parsed = JSON.parse(preparsed);
