@@ -6,4 +6,6 @@ exports.return_json_set = (req, res) => {
             res.send(err);
         }
     });
+
+    //add contollers viewfunctions for chart components
 };
