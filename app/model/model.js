@@ -21,4 +21,20 @@ View.getJSONdata = (viewId, result) => {
     });   
 };
 
+View.getOneHourTotals = () => {
+
+}
+
+View.get24HRTotals = () => {
+
+}
+
+View.getMaxOneHourMag = () => {
+
+}
+
+View.getMax24Mag = () => {
+    
+}
+
 module.exports = View;
