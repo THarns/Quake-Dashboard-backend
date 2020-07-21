@@ -6,8 +6,11 @@ module.exports = function(app) {
         .get(controller.return_json_set);
 
     //GET route for component calls
-    /*app.route('/comp/')
-        .get();*/
+    app.route('/stats/maxmagHour')
+        .get(controller.return_stats_maxMagHR);
+
+    app.route('/stats/lastOfN')
+        .get(controller.return_stats_last_N_maxMagHR);
 
     //Will need 2 component calls for chart.js components
 };

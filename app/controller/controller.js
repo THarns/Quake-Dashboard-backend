@@ -6,6 +6,20 @@ exports.return_json_set = (req, res) => {
             res.send(err);
         }
     });
+};
 
-    //add contollers viewfunctions for chart components
+exports.return_stats_maxMagHR = (req, res) => {
+    View.getMaxMagHour(function(err, view) {
+        if(err) {
+            res.send(err);
+        }
+    });
+};
+
+exports.return_stats_last_N_maxMagHR = (req, res) => {
+    View.getLastNofMaxMagHour(function(err, view) {
+        if(err) {
+            res.send(err);
+        }
+    });
 };
