@@ -40,9 +40,14 @@ View.getLastNofMaxMagHour = (result) => {
             console.log("error: " + err);
         } else {
             let parsed = JSON.parse(JSON.stringify(res));
-
-            console.log(parsed);
-            result(parsed);
+            let magArr = [];
+            for(let i = 0; i < parsed.length; i++) {
+                let item = parseFloat(parsed[i].MaxMagHR);
+                let itemTrun = item.toFixed(1);
+                magArr.push(itemTrun);
+            }
+            console.log(magArr);
+            result(magArr);
         }
     });
 }
