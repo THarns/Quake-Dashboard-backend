@@ -27,7 +27,6 @@ View.getMaxMagHour = (result) => {
             console.log("error: " + err);
         } else {
             let parsed = JSON.parse(JSON.stringify(res));
-            //let parsed = JSON.parse(preparsed);
 
             console.log(parsed[0].MaxMagHR);
             result(parsed[0].MaxMagHR);
@@ -36,12 +35,11 @@ View.getMaxMagHour = (result) => {
 }
 
 View.getLastNofMaxMagHour = (result) => {
-    let query = sql.query('SELECT * from stats_log ORDER BY TimeStamp DESC LIMIT 2', (err, res) => {
+    let query = sql.query('SELECT * from stats_log ORDER BY TimeStamp DESC LIMIT 5', (err, res) => {
         if(err) {
             console.log("error: " + err);
         } else {
             let parsed = JSON.parse(JSON.stringify(res));
-            //let parsed = JSON.parse(preparsed);
 
             console.log(parsed);
             result(parsed);
