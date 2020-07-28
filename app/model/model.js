@@ -46,6 +46,8 @@ View.getLastNofMaxMagHour = (result) => {
                 let itemTrun = item.toFixed(1);
                 magArr.push(itemTrun);
             }
+
+            magArr.reverse();
             console.log(magArr);
             result(magArr);
         }
