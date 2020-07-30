@@ -34,6 +34,20 @@ View.getMaxMagHour = (result) => {
     });
 }
 
+View.getTotalOfHour = (result) => {
+    let query = sql.query('SELECT pastHRtotal from stats_log WHERE TimeStamp = (SELECT MAX(TimeStamp) FROM stats_log)', (err, res) => {
+        if(err) {
+            console.log("error: " + err);
+        } else {
+            let parsed = JSON.parse(JSON.stringify(res));
+
+            console.log(parsed);
+            result(parsed);
+            //console.log(res);
+        }
+    });
+}
+
 View.getLastNofMaxMagHour = (result) => {
     let query = sql.query('SELECT * from stats_log ORDER BY TimeStamp DESC LIMIT 5', (err, res) => {
         if(err) {

@@ -9,6 +9,9 @@ module.exports = function(app) {
     app.route('/stats/maxmagHour')
         .get(controller.return_stats_maxMagHR);
 
+    app.route('/stats/totalOfHour')
+        .get(controller.return_stats_totalOfHR);
+
     app.route('/stats/lastOfN')
         .get(controller.return_stats_last_N_maxMagHR);
 
