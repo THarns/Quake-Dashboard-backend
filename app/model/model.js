@@ -62,7 +62,7 @@ View.getLastNofCombinedTotals = (result) => {
                 twentyFourArr.push(parsed[i].pastDaytotal);
             }
 
-            let combinedArr = [hourlyArr, twentyFourArr];
+            let combinedArr = [hourlyArr.reverse(), twentyFourArr.reverse()];
             result(combinedArr);
         }
     });
