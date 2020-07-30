@@ -48,6 +48,26 @@ View.getTotalOfHour = (result) => {
     });
 }
 
+View.getLastNofCombinedTotals = (result) => {
+    let query = sql.query('SELECT * from stats_log ORDER BY TimeStamp DESC LIMIT 5', (err, res) => {
+        if(err) {
+            console.log("error: " + err);
+        } else {
+            let parsed = JSON.parse(JSON.stringify(res));
+
+            console.log(parsed);
+            let hourlyArr = [], twentyFourArr = [];
+            for(let i = 0; i < parsed.length; i++) {
+                hourlyArr.push(parsed[i].pastHRtotal);
+                twentyFourArr.push(parsed[i].pastDaytotal);
+            }
+
+            let combinedArr = [hourlyArr, twentyFourArr];
+            result(combinedArr);
+        }
+    });
+}
+
 View.getLastNofMaxMagHour = (result) => {
     let query = sql.query('SELECT * from stats_log ORDER BY TimeStamp DESC LIMIT 5', (err, res) => {
         if(err) {

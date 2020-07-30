@@ -12,6 +12,9 @@ module.exports = function(app) {
     app.route('/stats/totalOfHour')
         .get(controller.return_stats_totalOfHR);
 
+    app.route('/stats/NofCombinedTotals')
+        .get(controller.return_stats_last_N_Totals);
+
     app.route('/stats/lastOfN')
         .get(controller.return_stats_last_N_maxMagHR);
 

@@ -24,6 +24,14 @@ exports.return_stats_totalOfHR = (req, res) => {
     });
 };
 
+exports.return_stats_last_N_Totals = (req, res) => {
+    View.getLastNofCombinedTotals(function(err, view) {
+        if(err) {
+            res.send(err);
+        }
+    });
+};
+
 exports.return_stats_last_N_maxMagHR = (req, res) => {
     View.getLastNofMaxMagHour(function(err, view) {
         if(err) {
